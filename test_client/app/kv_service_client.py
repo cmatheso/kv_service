@@ -1,9 +1,7 @@
 import json
 import os
 import requests
-
-class kv_model:
-    """"""
+import urllib.parse
 
 class kv_service_client:
     """A client to the kv_service."""
@@ -21,7 +19,7 @@ class kv_service_client:
         self.url = embeddedUrl
 
     def __build_url(self, *args:str) -> str:
-        return self.url + '/kv/' + "/".join(args)
+        return self.url + '/kv/' + "/".join(map(lambda x: urllib.parse.quote_plus(x), args))
 
     def read_key(self, key:str) -> str:
         try:

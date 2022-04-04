@@ -35,7 +35,7 @@ def test_deletion():
 
 @app.get("/test/overwrite")
 def test_overwrite():
-    testKey = 'test_overwrite'
+    testKey = 'test $$&overwrite' # Also testing the kv_service_client indirectly for correct url passing here too
     testVal = 'some text'
     testVal2 = 'updated text'
 

@@ -1,5 +1,11 @@
 # kv_service
-The kv_service is a very simple in memory key value cache. It can be manually interacted with using /docs via Swagger UI or for an example usage of it please see the test_client below.
+The kv_service is a very simple in memory key value cache REST service. It can be manually interacted with using /docs via Swagger UI or for an example usage of it please see the test_client.
+
+Available APIs include:
+/kv/[key]:
+GET - To retrieve the value
+POST - To set or update the value. Expected JSON payload as follows: "{ 'value': 'the value to store' }"
+DELETE - to delete the value
 
 ## Local Dev:
 - Switch to kv_service directory.
@@ -14,7 +20,7 @@ The kv_service is a very simple in memory key value cache. It can be manually in
     pip install -r dev-requirements.txt
     pytest
 
-## Swagger UI
+## Manual Testing / Swagger UI
 - Simply navigate to /docs in your browser to interact with the services manually.
 
 ## Docker Hosting:
@@ -29,4 +35,4 @@ The kv_service is a very simple in memory key value cache. It can be manually in
 - Cleanup:
     docker stop kv_service
     docker rm kv_service
-    docker image rm kv_service
+    docker rmi kv_service

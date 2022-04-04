@@ -1,5 +1,9 @@
 # test_client
-A simple client which tests the kv_service. Exposes 2 primary testing endpoints: /test/overwrite and /test/deletion.
+A simple client service which tests the kv_service.
+
+Available APIs include:
+GET /test/overwrite - Tests replacing a stored value with another.
+GET /test/deletion - Tests storing and deletion of a value.
 
 ## Local Dev:
 - Switch to test_client directory.
@@ -16,7 +20,7 @@ KV_SERVICE_URL=[HOSTED_KV_SERVICE_URL]
     pip install -r dev-requirements.txt
     pytest
 
-## Swagger UI
+## Manual Testing / Swagger UI
 - Simply navigate to /docs in your browser to interact with the services manually.
 
 ## Docker Hosting:
@@ -31,4 +35,4 @@ KV_SERVICE_URL=[HOSTED_KV_SERVICE_URL]
 - Cleanup:
     docker stop test_client
     docker rm test_client
-    docker image rm test_client
+    docker rmi test_client
